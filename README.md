@@ -40,4 +40,4 @@ File uploads, file type validation, hidden input elements, moving files, file/di
 
 Chapter 6
 
-Use $_SERVER superglobal for authentication, header manipulation, consolidated authentication, include approval methods for submissions, utilize type validation in forms, 
+Use $_SERVER superglobal for authentication, header manipulation, consolidated authentication, include approval methods for submissions, utilize type validation in forms,
