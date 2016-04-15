@@ -16,7 +16,6 @@
         </ul>
     </nav>
 </header>
-
 <section>
     <img src="http://i.imgur.com/f4HSm7v.png" alt="Large Subscription">
     <h1>Large Subscription Box</h1>

@@ -16,17 +16,16 @@
         </ul>
     </nav>
 </header>
-
 <section>
-<img src="https://i.imgur.com/gZRZBny.png" alt="Small Subscription">
-<h1>Small Subscription Box</h1>
-<h2>This box comes with three of the most poplar flavors of tea and . The flavors are :</h2>
+    <img src="https://i.imgur.com/gZRZBny.png" alt="Small Subscription">
+    <h1>Small Subscription Box</h1>
+    <h2>This box comes with five of the most poplar flavors of tea. The flavors are :</h2>
     <h2><li>Earl Grey Tea</li></h2>
     <h2><li>Green Tea</li></h2>
     <h2><li>Gunpowder Tea</li></h2>
-<h3>It comes with plenty of each flavor, so don't worry! And it's only $14.99 a box!</h3>
+    <h3>It comes with plenty of each flavor, so don't worry! And it's only $14.99 a box!</h3>
 </section>
-
+</body>
 <?php
 $dbh = new PDO('mysql:host=localhost;dbname=subscription', 'root', 'root');
 if(isset($_POST['submit'])) {
@@ -41,12 +40,13 @@ if(isset($_POST['submit'])) {
     $stmt = $dbh->prepare($query);
     $result = $stmt->execute(
         array(
-            'full_name'   => $full_name,
+            'full_name'        => $full_name,
             'address'     => $address,
             'email'       => $email,
             'price'       => $price,
         )
     );
+
     //Mail function of the code
     $from = 'jacob.riggs@west-mec.org';
     $subject = 'Your order';
@@ -57,15 +57,16 @@ if(isset($_POST['submit'])) {
     mail($to,$subject,$msg, 'From:'. $from);
 }
 ?>
+
 <section id="section2">
     <br>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-        <input id="name" name="name" placeholder="Full Name">
+        <input id="full_name" name="full_name" placeholder="Full Name">
         <input id="address" name="address" placeholder="Address">
         <input id="email" name="email" placeholder="Email">
         <input id="price" name="price" type="hidden" value="14.99">
-        <input id="submit" type="submit" value="Order">
+        <input id="submit" name="submit" type="submit" value="Order">
     </form>
 </section>
-</body>
+
 </html>

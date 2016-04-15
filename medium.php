@@ -16,11 +16,10 @@
         </ul>
     </nav>
 </header>
-
 <section>
     <img src="https://i.imgur.com/lh82lQG.png" alt="Medium Subscription">
     <h1>Medium Subscription Box</h1>
-    <h2>This box comes with four of the most poplar flavors of tea. The flavors are :</h2>
+    <h2>This box comes with five of the most poplar flavors of tea. The flavors are :</h2>
     <h2><li>Earl Grey Tea</li></h2>
     <h2><li>Green Tea</li></h2>
     <h2><li>Gunpowder Tea</li></h2>
@@ -42,7 +41,7 @@ if(isset($_POST['submit'])) {
     $stmt = $dbh->prepare($query);
     $result = $stmt->execute(
         array(
-            'full_name'   => $full_name,
+            'full_name'        => $full_name,
             'address'     => $address,
             'email'       => $email,
             'price'       => $price,
@@ -63,13 +62,12 @@ if(isset($_POST['submit'])) {
 <section id="section2">
     <br>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-        <input id="name" name="name" placeholder="Full Name">
+        <input id="full_name" name="full_name" placeholder="Full Name">
         <input id="address" name="address" placeholder="Address">
         <input id="email" name="email" placeholder="Email">
         <input id="price" name="price" type="hidden" value="19.99">
-        <input id="submit" type="submit" value="Order">
+        <input id="submit" name="submit" type="submit" value="Order">
     </form>
 </section>
 
 </html>
-
